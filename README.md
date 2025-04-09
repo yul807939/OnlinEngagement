@@ -23,7 +23,9 @@ on resource-constrained devices.
 
 
 # Dataset
-BIWI : https://www.kaggle.com/datasets/kmader/biwi-kinect-head-pose-database \par
-300W-LP : http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3ddfa/main.htm
+## BIWI 
+  https://www.kaggle.com/datasets/kmader/biwi-kinect-head-pose-database 
+## 300W-LP 
+  http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3ddfa/main.htm
 
 
