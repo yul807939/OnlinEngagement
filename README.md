@@ -20,3 +20,10 @@ to 0.45×106, which is more than a 90% reduction while maintaining higher
 accuracy. This study not only expands the application of head pose in education 
 but also provides a feasible solution for real-time participation monitoring
 on resource-constrained devices.
+
+
+# Dataset
+BIWI : https://www.kaggle.com/datasets/kmader/biwi-kinect-head-pose-database
+300W-LP : http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3ddfa/main.htm
+
+
