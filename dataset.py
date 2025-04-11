@@ -4,7 +4,7 @@ import torch
 from torch.utils.data.dataset import Dataset
 from PIL import Image, ImageFilter
 import utils
-import cv2
+
 
 Path_images = "./BIWI/"
 Path_labels = "./dataset/BIWI/"
@@ -33,39 +33,7 @@ def rotateMatrixToEulerAngles(R):
         
     return out_euler
 
-def SaveBIWIToNPZ():
-    data_imgs = os.listdir(Path_images)
-    Train_imgs =[]
-    Train_labels = []
-    Test_imgs =[]
-    Test_labels = []
-    for name in data_imgs:
-        img = cv2.imread(Path_images + name)
-        name_label = Path_labels +name[0:2] + "/" + name[2:-7] + "pose.txt"
 
-        matrix_angle = ExtractRotateMatrix(name_label)
-        yaw , pitch, roll = rotateMatrixToEulerAngles(matrix_angle)
-
-        img = img[40:160 , 55:145]
-        img = cv2.resize(img , (100 , 100))
-        
-        ID = int(name[0:2])
-        angle = np.array([yaw  , pitch , roll])
-        img = np.array(img)
-        if ID not in Data_Split:
-            Train_imgs.append(img)
-            Train_labels.append(angle)
-        else :
-            Test_imgs.append(img)
-            Test_labels.append(angle)
-    Train_images = np.array(Train_imgs)
-    Train_labels = np.array(Train_labels)
-    Test_images = np.array(Test_imgs)
-    Test_labels = np.array(Test_labels)
-
-
-
-    
 def get_list_from_filenames(file_path):
 
     with open(file_path) as f:
