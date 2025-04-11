@@ -476,20 +476,3 @@ class CrossNet(nn.Module):
 
 
 
-#测试模型正确输出
-if __name__ == "__main__":
-    Img = torch.zeros((64 , 3 , 64, 64))
-    model =CrossNet(2)
-
-
-    current_time = datetime.now()
-    formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
-    print(formatted_time)
-    out = model(Img)
-    current_time = datetime.now()
-    formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
-    print(formatted_time)
-    print("MMMMMMMMMM" , out.shape)
-    # 计算模型的参数量
-    total_params = sum(p.numel() for p in model.parameters())
-    print("模型参数量:", total_params)
